@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.krauss.filtextulator.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linearl_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/server_ip"
+                android:layout_width="123dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:digits="0123456789."
+                android:hint="Server IP" />
+
+            <Button
+                android:id="@+id/bt_connect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:onClick="runConnectionChecker"
+                android:text="Connect" />
+
+            <ImageView
+                android:id="@+id/conn_ok"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bt_load"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:drawableStart="@drawable/ic_file_download_black_18dp"
+                android:enabled="false"
+                android:onClick="runFilterLoader"
+                android:padding="10dp"
+                android:text="GET FILTERS" />
+
+            <ImageView
+                android:id="@+id/iv_random"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_toRightOf="@id/bt_load"
+                android:clickable="true"
+                android:elevation="3dp"
+                android:onClick="setRandomLoad"
+                android:src="@drawable/ic_shuffle_black_18dp"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/list_filters"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp" />
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Type your text here:"
+            android:inputType="text"
+            android:textSize="16sp"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/bt_process"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:drawableStart="@drawable/ic_change_history_black_18dp"
+            android:onClick="runFilterProcessor"
+            android:padding="10dp"
+            android:text=" APPLY "
+            android:visibility="invisible" />
+
+        <EditText
+            android:id="@+id/tv_processedtext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#0000ff"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+</ScrollView>

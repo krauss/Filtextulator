@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Filtextulator</string>
+    <string name="button_text">Load Filters</string>
+    <string name="text_field">Type your text here:</string>
+</resources>
